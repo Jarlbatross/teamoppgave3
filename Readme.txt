@@ -1,9 +1,7 @@
 høypri:
-- Lag Terje
-- Bestemme hvordan cooolness skal måles, og hvordan vi øker eller senker meteret.
 - Lage representasjon for båt+sjåfør
 - kobling mellom forespørsel av hilsen og svar-hilsen
-- lage kulhetsnivåer som representeres grafisk
+- lage kulhetsnivåer som representeres grafisk i tre eller flere deler
 - bakgrunn
 
 
