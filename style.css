@@ -1,0 +1,21 @@
+#app{
+    background-image: url("img/water.webp");
+    background-size: contain;
+    position: relative;
+    /* background-repeat: no-repeat; */
+}
+
+.person{
+    height: 300px;
+    position: absolute;
+    right: 15%;
+    bottom: 20%
+}
+
+.boat {
+    height: 300px;
+}
+
+.flip {
+    transform: rotateY(180deg)
+}

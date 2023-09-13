@@ -11,22 +11,27 @@ const persons = [
   {
     name: 'Bob',
     greeting: greetings[0],
+    image: 'img/persons/bob.png'
   },
   {
     name: 'Espen',
     greeting: greetings[1],
+    image: 'img/persons/espen.png'
   },
   {
     name: 'Granny',
     greeting: greetings[2],
-  },
+    image: 'img/persons/granny.png'
+  },  
   {
     name: 'Greta',
     greeting: greetings[3],
+    image: 'img/persons/gretha.png'
   },
   {
     name: 'Terje',
     greeting: greetings[4],
+    image: 'img/persons/terje.png'
   },
 ];
 
@@ -46,6 +51,7 @@ function updateView() {
     <div id='personId'>${showPersonHTML(currentPerson)}</div>
     <div>${buttonsHTML()}</div>
     <button onclick="randomPerson()">Kjør videre</button>
+    
 `;
 }
 
@@ -60,25 +66,22 @@ function buttonsHTML() {
 }
 
 function showPersonHTML(person) {
-  return /*html*/ `
-      <p>Navn: ${person.name}</p>
-      <p>Greeting: ${person.greeting}</p>
-  `;
+  return `<img class="person" src="${person.image}"/>`;
 }
 
 function boatImageHTML() {
 
   if (coolFactor > 80) {
-    return `<img src="img/big-boat.webp" alt="" />`;
+    return `<img class="boat flip" src="img/boats/big-boat.webp" alt="" />`;
   }
   if (coolFactor > 50) {
-    return `<img src="img/yacht-boat-ride.gif" alt="" />`;
+    return `<img class="boat flip" src="img/boats/yacht-boat-ride.gif" alt="" />`;
   }
   if (coolFactor > 20) {
-    return `<img src="img/sailing-boat-trip.gif" alt="" />`;
+    return `<img class="boat flip" src="img/boats/sailing-boat-trip.gif" alt="" />`;
   }
 
-  return `<img src="img/stroke-faster.gif" alt="" />`;
+  return `<img class="boat flip" src="img/boats/stroke-faster.gif" alt="" />`;
 
 }
 
