@@ -67,12 +67,19 @@ function showPersonHTML(person) {
 }
 
 function boatImageHTML() {
-  let image = "img/stroke-faster.gif";
-  if (coolFactor >= 30) {
-    image = 
+
+  if (coolFactor > 80) {
+    return `<img src="img/big-boat.webp" alt="" />`;
   }
-  let html = /*html*/``;
-  return html;
+  if (coolFactor > 50) {
+    return `<img src="img/yacht-boat-ride.gif" alt="" />`;
+  }
+  if (coolFactor > 20) {
+    return `<img src="img/sailing-boat-trip.gif" alt="" />`;
+  }
+
+  return `<img src="img/stroke-faster.gif" alt="" />`;
+
 }
 
 // Controller
