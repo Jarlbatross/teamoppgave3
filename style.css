@@ -9,7 +9,7 @@
     height: 300px;
     position: absolute;
     right: 15%;
-    bottom: 20%
+    bottom: 45%
 }
 
 .boat {
@@ -18,4 +18,15 @@
 
 .flip {
     transform: rotateY(180deg)
+}
+
+.greetings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.greetings img {
+    height: 150px;
 }

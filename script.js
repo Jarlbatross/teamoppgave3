@@ -1,11 +1,11 @@
 // Model
 
 const greetings = [
-  'wave',
-  'fistbump',
-  'middle-finger',
-  'Sign',
-  'Feedback-tool',
+  'img/greetings/wave.png',
+  'img/greetings/fist-bump.jpg',
+  'img/greetings/middle-finger.png',
+  'img/greetings/howdare.png',
+  'img/greetings/feedback-tool.png',
 ];
 const persons = [
   {
@@ -36,7 +36,11 @@ const persons = [
 ];
 
 let currentPerson = null;
-let coolFactor = 0;
+let coolFactor = 10;
+let red = 255;
+let green = 255;
+let blue = 255;
+let colorOffset = 1;
 
 // View
 
@@ -45,21 +49,34 @@ randomPerson();
 updateView();
 
 function updateView() {
+  
+  if (coolFactor == 100) {
+    app.innerHTML = /*html*/ `
+      <img style='height: 500px;margin-left: 30%' src="img/win.gif" alt="">
+    `;
+    return;
+  }
+  if (coolFactor == 0) {
+    app.innerHTML = /*html*/ `
+      <img style='height: 500px;margin-left: 30%' src="img/loose.gif" alt="">
+    `;
+    return;
+  }
+
   app.innerHTML = /*html*/ `
     <div style="width: 50px; height: 100px; border: solid 1px #000;background-image: linear-gradient(to top, green ${coolFactor}%, rgba(0,0,0,0) 0%)"></div>
     <div id='båt'>${boatImageHTML()}</div>
     <div id='personId'>${showPersonHTML(currentPerson)}</div>
-    <div>${buttonsHTML()}</div>
-    <button onclick="randomPerson()">Kjør videre</button>
-    
+    <div class="greetings">${buttonsHTML()}</div>
 `;
+
 }
 
 function buttonsHTML() {
   let html = '';
   for (let i = 0; i < greetings.length; i++) {
     html += /* html */ `
-          <button onclick="greetPerson('${greetings[i]}')">${greetings[i]}</button>
+        <img onclick="greetPerson('${greetings[i]}')" src="${greetings[i]}" alt="">
       `;
   }
   return html;
@@ -71,6 +88,7 @@ function showPersonHTML(person) {
 
 function boatImageHTML() {
 
+  
   if (coolFactor > 80) {
     return `<img class="boat flip" src="img/boats/big-boat.webp" alt="" />`;
   }
